@@ -1,14 +1,14 @@
 # I am a comment, and I want to say that the variable CC will be
 # the compiler to use.
-CC=g++
+CC=clang
 # Hey!, I am comment number 2. I want to say that CFLAGS will be the
 # options I'll pass to the compiler.
-CFLAGS=-c -Wall -pthreads
+CFLAGS= -Wall -pthreads
 
-all: main.o
+# using the -c flag will stop clang from creating an executable
 
-main.o: main.cpp
-	$(CC) $(CFLAGS) main.cpp -o a.out
+all: main.c
+	$(CC) $(CFLAGS) main.c -o main 
 
 clean:
 	rm a.out
